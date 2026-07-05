@@ -1,0 +1,481 @@
+/* 
+    Scoatem marginile si padding-ul implicite ale browserului.
+    Altfel, fiecare browser poate afisa pagina putin diferit.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    STILURI GENERALE PENTRU PAGINA
+    Aici setam fontul, culoarea textului si fundalul general.
+*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2933;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+}
+
+/* 
+    Stil general pentru linkuri.
+    text-decoration: none scoate sublinierea implicita.
+*/
+a {
+    color: #0f766e;
+    text-decoration: none;
+}
+
+/* 
+    Efect simplu la hover pentru linkuri.
+*/
+a:hover {
+    color: #064e3b;
+    text-decoration: underline;
+}
+
+/* 
+    Imaginile nu trebuie sa iasa din container.
+    max-width: 100% face imaginea sa se adapteze la latimea parintelui.
+*/
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 
+    ANTETUL PAGINII
+    Contine meniul si zona hero.
+*/
+.sectiune-antet {
+    background-color: white;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 
+    MENIUL PRINCIPAL
+    Folosim Flexbox pentru a aseza logo-ul in stanga si linkurile in dreapta.
+*/
+.meniu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+    background-color: white;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* 
+    Logo-ul text al blogului.
+*/
+.logo-blog {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f766e;
+}
+
+/* 
+    Lista meniului.
+    display: flex pune linkurile unul langa altul.
+*/
+.lista-meniu {
+    display: flex;
+    gap: 24px;
+    list-style-type: none;
+}
+
+/* 
+    Linkurile din meniu.
+*/
+.lista-meniu a {
+    font-weight: bold;
+    color: #1f2933;
+    transition: color 0.3s ease;
+}
+
+/* 
+    Hover pe linkurile meniului.
+*/
+.lista-meniu a:hover {
+    color: #0f766e;
+}
+
+/* 
+    HERO
+    Folosim Flexbox pentru 2 coloane:
+    coloana de text si coloana cu imagine.
+*/
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    padding: 70px 8%;
+    min-height: 520px;
+}
+
+/* 
+    Textul din hero.
+    flex: 1 inseamna ca aceasta coloana ocupa o parte egala din spatiul disponibil.
+*/
+.text-hero {
+    flex: 1;
+}
+
+/* 
+    Eticheta mica deasupra titlului.
+    position: relative este folosita pentru decorul creat cu ::before.
+*/
+.eticheta-hero {
+    position: relative;
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding-left: 18px;
+
+    color: #0f766e;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* 
+    Pseudo-element decorativ.
+    Creeaza un cerc mic inaintea textului.
+*/
+.eticheta-hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+
+    width: 10px;
+    height: 10px;
+    background-color: #0f766e;
+    border-radius: 50%;
+}
+
+/* 
+    Titlul principal.
+*/
+.text-hero h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+
+    animation-name: aparitie;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+/* 
+    Textul de descriere din hero.
+*/
+.tagline {
+    font-size: 20px;
+    margin-bottom: 28px;
+    color: #4b5563;
+}
+
+/* 
+    Imaginea din hero.
+    flex: 1 inseamna ca imaginea ocupa o coloana in zona hero.
+*/
+.imagine-hero {
+    flex: 1;
+
+    border: 8px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    overflow: hidden;
+
+    transform: rotate(1deg);
+    transition: transform 0.3s ease;
+}
+
+/* 
+    Efect cand trecem cu mouse-ul peste imagine.
+*/
+.imagine-hero:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* 
+    SECTIUNI GENERALE
+*/
+.sectiune {
+    padding: 70px 8%;
+}
+
+/* 
+    Continut mai ingust pentru sectiunea Despre mine.
+*/
+.continut-ingust {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 
+    Titlurile din sectiuni.
+*/
+.sectiune h2 {
+    font-size: 34px;
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+/* 
+    Paragrafele din sectiuni.
+*/
+.sectiune p {
+    margin-bottom: 16px;
+}
+
+/* 
+    Titlu de sectiune centrat.
+*/
+.titlu-sectiune {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* 
+    RAND CU 3 COLOANE PENTRU ARTICOLE
+    Folosim Flexbox pentru a aseza cele 3 carduri unul langa altul.
+    Aceasta zona respecta cerinta de layout cu 3 coloane.
+*/
+.rand-articole {
+    display: flex;
+    gap: 24px;
+}
+
+/* 
+    Card pentru fiecare articol.
+    flex: 1 face ca toate cele 3 carduri sa aiba aceeasi latime.
+*/
+.card-articol {
+    flex: 1;
+    position: relative;
+
+    background-color: white;
+    padding: 28px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 
+    Efect hover pe card.
+    Cardul se ridica putin cand trecem cu mouse-ul peste el.
+*/
+.card-articol:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* 
+    Cardul din mijloc este evidentiat printr-o margine mai vizibila.
+*/
+.card-evidentiat {
+    border: 2px solid #0f766e;
+}
+
+/* 
+    Categorie mica de articol.
+*/
+.categorie-articol {
+    color: #0f766e;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* 
+    Titlul fiecarui articol.
+*/
+.card-articol h3 {
+    margin: 12px 0;
+    font-size: 24px;
+    color: #111827;
+}
+
+/* 
+    Linkul din articol.
+*/
+.link-articol {
+    font-weight: bold;
+}
+
+/* 
+    ZONA CU 2 COLOANE
+    Folosim Flexbox pentru Blog roll + Contact.
+    Aceasta zona respecta cerinta de layout cu 2 coloane.
+*/
+.zona-doua-coloane {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+/* 
+    Coloana laterala Blog roll.
+    flex: 1 inseamna ca aceasta coloana este mai ingusta.
+*/
+.coloana-laterala {
+    flex: 1;
+
+    background-color: white;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+/* 
+    Lista de bloguri.
+*/
+.lista-blogroll {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* 
+    Fiecare element din lista blogroll.
+*/
+.lista-blogroll li {
+    margin-bottom: 12px;
+}
+
+/* 
+    Formularul de contact.
+    flex: 2 inseamna ca aceasta coloana este mai lata decat blogroll.
+*/
+.formular-contact {
+    flex: 2;
+
+    background-color: white;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+/* 
+    Formularul propriu-zis.
+    Folosim flex-direction: column pentru a pune campurile unul sub altul.
+*/
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+    Etichetele campurilor.
+*/
+label {
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* 
+    Campurile formularului.
+*/
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 
+    Efect cand utilizatorul da click in input sau textarea.
+*/
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+/* 
+    BUTON PRINCIPAL
+    Folosit si in hero, si in formular.
+*/
+.buton-principal {
+    display: inline-block;
+
+    margin-top: 18px;
+    padding: 12px 22px;
+
+    background-color: #0f766e;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* 
+    Hover pe buton.
+*/
+.buton-principal:hover {
+    background-color: #064e3b;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-3px);
+}
+
+/* 
+    FOOTER
+    Folosim Flexbox pentru a pune textul in stanga si linkul in dreapta.
+*/
+.subsol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 24px 8%;
+    background-color: #111827;
+    color: white;
+}
+
+/* 
+    Linkul din footer.
+*/
+.subsol a {
+    color: white;
+    font-weight: bold;
+}
+
+/* 
+    ANIMATIE CSS
+    Folosita pentru aparitia titlului principal din hero.
+*/
+@keyframes aparitie {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

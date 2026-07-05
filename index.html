@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <!-- Seteaza tipul de caractere folosit de pagina -->
+    <meta charset="UTF-8">
+
+    <!-- Ajuta pagina sa se vada corect pe ecrane diferite -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titlul care apare in tab-ul browserului -->
+    <title>Blogul Ancai despre Cluj</title>
+
+    <!-- Legatura catre fisierul CSS extern -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="sus">
+
+    <!-- HEADER: partea de sus a paginii, cu meniul si zona hero -->
+    <header id="antet" class="sectiune-antet">
+
+        <!-- NAV: meniul principal de navigare -->
+        <nav id="meniu-principal" class="meniu">
+
+            <!-- Numele blogului, afisat ca logo text -->
+            <p class="logo-blog">Anca's Blog</p>
+
+            <!-- Lista cu linkuri catre sectiunile din aceeasi pagina -->
+            <ul class="lista-meniu">
+                <li><a href="#despre-mine">Despre mine</a></li>
+                <li><a href="#articole">Articole</a></li>
+                <li><a href="#blogroll">Blog roll</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- HERO: zona principala introductiva, impartita in 2 coloane -->
+        <section id="hero" class="hero">
+
+            <!-- Coloana 1 din hero: textul principal -->
+            <div class="text-hero">
+                <p class="eticheta-hero">Blog personal</p>
+
+                <h1>Salut! Sunt Anca.</h1>
+
+                <p class="tagline">
+                    Invat HTML si CSS si construiesc un blog simplu despre mine,
+                    colegii mei si cateva locuri frumoase din Cluj.
+                </p>
+
+                <!-- Link stilizat ca buton, duce spre sectiunea de articole -->
+                <a href="#articole" class="buton-principal">Vezi articolele</a>
+            </div>
+
+            <!-- Coloana 2 din hero: imaginea -->
+            <div class="imagine-hero">
+                <img 
+                    src="imagini/pic1.png" 
+                    alt="O parte din grupul Techable 2025-2026">
+            </div>
+
+        </section>
+    </header>
+
+    <!-- MAIN: continutul principal al paginii -->
+    <main>
+
+        <!-- DESPRE MINE: sectiune simpla cu text -->
+        <section id="despre-mine" class="sectiune continut-ingust">
+            <h2>Despre mine</h2>
+
+            <p>
+                Ma numesc Anca, sunt din Cluj si sunt incepatoare in programare.
+                Am inceput cu HTML si CSS, iar acest blog este un exercitiu practic
+                prin care invat sa construiesc o pagina mai moderna si mai clara.
+            </p>
+
+            <p>
+                In timpul liber imi place sa petrec timp in natura, sa ascult muzica,
+                sa citesc, sa invat lucruri noi si sa descopar locuri interesante.
+            </p>
+        </section>
+
+        <!-- ARTICOLE: sectiunea cu 3 articole despre Cluj -->
+        <section id="articole" class="sectiune">
+
+            <!-- Titlul sectiunii de articole -->
+            <div class="titlu-sectiune">
+                <h2>Articole despre Cluj</h2>
+                <p>
+                    Trei locuri cunoscute din Cluj si din apropiere.
+                </p>
+            </div>
+
+            <!-- 
+                RAND CU 3 COLOANE:
+                Folosim Flexbox pentru a aseza cele 3 articole unul langa altul.
+            -->
+            <div class="rand-articole">
+
+                <!-- ARTICOL 1: prima coloana -->
+                <article class="card-articol">
+                    <p class="categorie-articol">Natura si relaxare</p>
+
+                    <h3>Gradina Botanica din Cluj</h3>
+
+                    <p>
+                        Gradina Botanica este un loc potrivit pentru plimbari, fotografii
+                        si momente linistite. Are sere, alei frumoase si zone tematice
+                        care o fac foarte placuta pentru vizitatori.
+                    </p>
+
+                    <a href="#contact" class="link-articol">Spune-mi daca ai fost aici?</a>
+                </article>
+
+                <!-- ARTICOL 2: a doua coloana -->
+                <article class="card-articol card-evidentiat">
+                    <p class="categorie-articol">Excursie aproape de Cluj</p>
+
+                    <h3>Salina Turda</h3>
+
+                    <p>
+                        Salina Turda este una dintre cele mai cunoscute atractii din apropierea
+                        Clujului. Este spectaculoasa prin dimensiune, lumina si atmosfera
+                        subterana, ceea ce o face diferita de o vizita obisnuita.
+                    </p>
+
+                    <a href="#contact" class="link-articol">As merge din nou</a>
+                </article>
+
+                <!-- ARTICOL 3: a treia coloana -->
+                <article class="card-articol">
+                    <p class="categorie-articol">Plimbare urbana</p>
+
+                    <h3>Parcul Central din Cluj-Napoca</h3>
+
+                    <p>
+                        Parcul Central este unul dintre cele mai cunoscute locuri de relaxare
+                        din oras. Este potrivit pentru plimbari, citit, intalniri cu prietenii
+                        sau pur si simplu pentru o pauza de la agitatia orasului.
+                    </p>
+
+                    <a href="#contact" class="link-articol">Loc bun pentru o pauza!</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 
+            ZONA CU 2 COLOANE:
+            Coloana din stanga este Blog roll.
+            Coloana din dreapta este formularul de contact.
+        -->
+        <section class="sectiune zona-doua-coloane">
+
+            <!-- ASIDE: continut lateral, potrivit pentru blogroll -->
+            <aside id="blogroll" class="coloana-laterala">
+                <h2>Blog roll</h2>
+
+                <p>
+                    Cateva linkuri catre bloguri ale colegilor sau resurse utile.
+                </p>
+
+                <!-- Lista simpla de linkuri -->
+                <ul class="lista-blogroll">
+                    <li>
+                        <a href="https://roseyoanna.github.io/html-homework-roseyoanna2/">
+                            Ioana Acsinia Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://stoicaglasul-tech.github.io/blog/">
+                            Giorgiana-Carla Stoica Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://cip200.github.io/Ceahlau/">
+                            Gabriel Iliescu Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://lauriantudor.github.io/Demo-site-accesibil/">
+                            Tudor Laurian Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com">
+                            YouTube - resurse video
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- CONTACT: formular simplu -->
+            <section id="contact" class="formular-contact">
+                <h2>Contact</h2>
+
+                <p>
+                    Poti completa formularul de mai jos.
+                </p>
+
+                <!-- Formular HTML simplu -->
+                <form action="#" method="post">
+
+                    <!-- Camp pentru nume -->
+                    <label for="nume">Nume</label>
+                    <input 
+                        type="text" 
+                        id="nume" 
+                        name="nume" 
+                        placeholder="Scrie numele tau">
+
+                    <!-- Camp pentru email -->
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="exemplu@email.com">
+
+                    <!-- Camp pentru mesaj -->
+                    <label for="mesaj">Mesaj</label>
+                    <textarea 
+                        id="mesaj" 
+                        name="mesaj" 
+                        rows="3" 
+                        placeholder="Scrie mesajul tau"></textarea>
+
+                    <!-- Buton de trimitere -->
+                    <button type="submit" class="buton-principal">
+                        Trimite mesajul
+                    </button>
+                </form>
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER: partea de jos a paginii -->
+    <footer id="subsol" class="subsol">
+        <p>Anca's Muresan blog 2026</p>
+
+        <!-- Link care duce inapoi sus -->
+        <a href="#sus">Mergi sus</a>
+    </footer>
+
+</body>
+</html>
